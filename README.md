@@ -1,1 +1,1 @@
-# shiny-guide
+# shine-guide
