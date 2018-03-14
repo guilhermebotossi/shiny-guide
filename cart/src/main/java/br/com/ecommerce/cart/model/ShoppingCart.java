@@ -1,6 +1,7 @@
 package br.com.ecommerce.cart.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,11 @@ public class ShoppingCart implements Serializable {
 
 	private List<ShoppingCartItem> itens;
 	
-	private Double cartTotal;
+	private double cartTotal;
+	
+	public ShoppingCart() {
+		itens = new ArrayList<ShoppingCartItem>();
+	}
 	
 	public void addItem(ShoppingCartItem item) {
 		if(!itens.contains(item)) {
@@ -47,12 +52,15 @@ public class ShoppingCart implements Serializable {
 	
 	public String listCart() {
 		StringBuilder sb = new StringBuilder();
-		itens.forEach(item -> sb.append(item.toString()).append(" X ").append(item.getQuantity()).append(" = ").append(item.calculateTotalPrice()));
-		sb.append("Total = ").append(cartTotal);
+		
+		if(!itens.isEmpty()) {
+			itens.forEach(item -> sb.append(item.getProduct()).append(" X ").append(item.getQuantity()).append(" = ").append(item.calculateTotalPrice()).append("\r\n"));
+			sb.append("Total = ").append(cartTotal);
+		}
 		
 		return sb.toString();
 	}
-	
+
 	public List<ShoppingCartItem> getItens() {
 		return itens;
 	}
@@ -61,13 +69,12 @@ public class ShoppingCart implements Serializable {
 		this.itens = itens;
 	}
 
-	public Double getCartTotal() {
+	public double getCartTotal() {
 		return cartTotal;
 	}
 
-	public void setCartTotal(Double cartTotal) {
+	public void setCartTotal(double cartTotal) {
 		this.cartTotal = cartTotal;
 	}
-
 	
 }

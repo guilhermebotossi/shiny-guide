@@ -38,7 +38,7 @@ public class ShoppingCartItem {
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
+		int result = 2;
 		result = prime * result + ((product == null) ? 0 : product.hashCode());
 		return result;
 	}

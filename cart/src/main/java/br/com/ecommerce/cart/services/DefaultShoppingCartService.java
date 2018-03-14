@@ -1,12 +1,14 @@
 package br.com.ecommerce.cart.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.ecommerce.cart.model.ShoppingCart;
 import br.com.ecommerce.cart.model.ShoppingCartItem;
 import br.com.ecommerce.product.model.Product;
 import br.com.ecommerce.product.repositories.ProductRepository;
 
+@Service
 public class DefaultShoppingCartService implements ShoppingCartService {
 	
 	@Autowired
@@ -17,21 +19,27 @@ public class DefaultShoppingCartService implements ShoppingCartService {
 
 	@Override
 	public String getShoppingCart() {
-		return shoppingCart.toString();
+		return shoppingCart.listCart();
 	}
 
 	@Override
 	public void addShoppingCartItem(long productId, int quantity) {
-		ShoppingCartItem sci = createCartItem(productId, quantity);
-		shoppingCart.addItem(sci);
+		Product product = productRepository.findById(productId);
+		if(product != null) {
+			ShoppingCartItem sci = new ShoppingCartItem(product, quantity);
+			shoppingCart.addItem(sci);
+		}	
 	}
 
 
 
 	@Override
 	public void updateShoppingCartItem(long productId, int quantity) {
-		ShoppingCartItem sci = createCartItem(productId, quantity);
-		shoppingCart.updateItem(sci);
+		Product product = productRepository.findById(productId);
+		if(product != null) {
+			ShoppingCartItem sci = new ShoppingCartItem(product, quantity);
+			shoppingCart.updateItem(sci);
+		}	
 	}
 
 	@Override
@@ -39,10 +47,4 @@ public class DefaultShoppingCartService implements ShoppingCartService {
 		shoppingCart.removeItem(productId); 
 	}
 
-	private ShoppingCartItem createCartItem(long productId, int quantity) {
-		Product product = productRepository.findById(productId);
-		ShoppingCartItem sci = new ShoppingCartItem(product, quantity);
-		return sci;
-	}
-	
 }

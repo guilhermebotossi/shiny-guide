@@ -63,7 +63,7 @@ public class ProductTest {
 		product.setId(1L);
 		product.setName("Celular");
 		
-		assertEquals(Integer.valueOf(-1966884846), Integer.valueOf(product.hashCode()));
+		assertEquals(Integer.valueOf(-1966882924), Integer.valueOf(product.hashCode()));
 	}
 	
 	@Test
@@ -108,6 +108,17 @@ public class ProductTest {
 	@Test
 	public void equalsTest5() {
 		product.setId(1L);
+		product.setName("Celular");
+		
+		Product p = new Product();
+		p.setId(1L);
+		p.setName("Tablet");
+		
+		assertFalse(product.equals(p));
+	}
+	
+	@Test
+	public void equalsTest6() {
 		product.setName("Celular");
 		
 		Product p = new Product();
