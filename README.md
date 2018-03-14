@@ -1,22 +1,22 @@
-#To run Application
+# To run Application
  ./gradlew bootRun
 
-#Access the Controllers through swagger
+# Access the Controllers through swagger
 http://localhost:8080/swagger-ui.html
 
-#Endpoints :
+# Endpoints :
 
-Mapped "{[/cart/viewCart],methods=[GET]}" 
-Mapped "{[/cart/addItem],methods=[POST]}" 
-Mapped "{[/cart/updateItem],methods=[PUT]}" 
-Mapped "{[/cart/removeItem],methods=[DELETE]}" 
-Mapped "{[/product/list/{id}],methods=[GET]}" 
-Mapped "{[/product/edit],methods=[POST]}" 
-Mapped "{[/product/delete/{id}],methods=[DELETE]}"
-Mapped "{[/product/add],methods=[PUT]}" 
-Mapped "{[/product/list],methods=[GET]}"
+Mapped "{[/cart/viewCart],methods=[GET]}" <br>
+Mapped "{[/cart/addItem],methods=[POST]}" <br>
+Mapped "{[/cart/updateItem],methods=[PUT]}" <br>
+Mapped "{[/cart/removeItem],methods=[DELETE]}" <br>
+Mapped "{[/product/list/{id}],methods=[GET]}" <br>
+Mapped "{[/product/edit],methods=[POST]}" <br>
+Mapped "{[/product/delete/{id}],methods=[DELETE]}"<br>
+Mapped "{[/product/add],methods=[PUT]}" <br>
+Mapped "{[/product/list],methods=[GET]}"<br>
 
-#Produtos Inicialmente disponiveis 
+# Produtos Inicialmente disponiveis 
     [
         {
             id: 1,
