@@ -9,7 +9,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.ecommerce.product.entities.Product;
+import br.com.ecommerce.product.model.Product;
 
 @Repository
 public class DefaultProductRepository implements ProductRepository {

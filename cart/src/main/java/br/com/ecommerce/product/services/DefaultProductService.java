@@ -5,8 +5,8 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ecommerce.product.entities.Product;
 import br.com.ecommerce.product.mappers.ProductMapper;
+import br.com.ecommerce.product.model.Product;
 import br.com.ecommerce.product.repositories.ProductRepository;
 import br.com.ecommerce.product.vos.ProductVO;
 

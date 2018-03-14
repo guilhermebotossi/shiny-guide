@@ -2,7 +2,7 @@ package br.com.ecommerce.product.repositories;
 
 import java.util.List;
 
-import br.com.ecommerce.product.entities.Product;
+import br.com.ecommerce.product.model.Product;
 
 public interface ProductRepository {
 

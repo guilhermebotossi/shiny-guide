@@ -3,7 +3,7 @@ package br.com.ecommerce.product.mappers;
 import java.util.Collection;
 import java.util.Set;
 
-import br.com.ecommerce.product.entities.Product;
+import br.com.ecommerce.product.model.Product;
 import br.com.ecommerce.product.vos.ProductVO;
 
 public interface ProductMapper {

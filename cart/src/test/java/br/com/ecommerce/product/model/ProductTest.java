@@ -1,5 +1,5 @@
 
-package br.com.ecommerce.product.entities;
+package br.com.ecommerce.product.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -8,6 +8,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import br.com.ecommerce.product.model.Product;
 
 @SuppressWarnings("unlikely-arg-type")
 public class ProductTest {

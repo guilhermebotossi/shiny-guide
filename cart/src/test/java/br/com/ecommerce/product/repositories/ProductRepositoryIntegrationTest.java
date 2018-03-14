@@ -21,14 +21,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.ecommerce.product.entities.Product;
+import br.com.ecommerce.product.model.Product;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {DefaultProductRepository.class})
 @EnableAutoConfiguration
 @DataJpaTest
 @Transactional
-@EntityScan(basePackages = "br.com.ecommerce.product.entities")
+@EntityScan(basePackages = "br.com.ecommerce.product")
 public class ProductRepositoryIntegrationTest {
 
 	@Autowired

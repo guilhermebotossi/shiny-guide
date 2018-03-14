@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import br.com.ecommerce.product.entities.Product;
+import br.com.ecommerce.product.model.Product;
 import br.com.ecommerce.product.vos.ProductVO;
 
 @Service
